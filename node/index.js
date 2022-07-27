@@ -10,9 +10,7 @@ const config = {
 const mysql = require('mysql')
 const random_name = require('node-random-name');
 
-var html = "<h1>Full Cycle Rocks!</h1>"
-html += "<hr />"
-html += "<ul>";
+var html = "";
 
 function insert_name() {
     const connection = mysql.createConnection(config)
@@ -32,7 +30,9 @@ function generate_html() {
         if (err) throw err;
         connection.query(sql, function (err, result, fields) {
             if (err) throw err;
-            
+            html = "<h1>Full Cycle Rocks!</h1>"
+            html += "<hr />"
+            html += "<ul>"
             results = JSON.parse(JSON.stringify(result))
             results.forEach(element => {
                 console.log(element)
