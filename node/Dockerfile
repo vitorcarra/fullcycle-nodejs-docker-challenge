@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install mysql && npm install node-random-name
+RUN npm install mysql && npm install node-random-name && npm install express
 
 RUN apt-get update && apt-get install -y wget
 
